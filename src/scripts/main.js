@@ -9,11 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const password = document.querySelector('#password');
   const password2 = document.querySelector('#password2');
   const formControl = document.querySelectorAll('.form-control');
-  const usernameValue = username.value.trim();
-  const emailValue = email.value.trim();
-  const phoneValue = phone.value.trim();
-  const passwordValue = password.value.trim();
-  const passwor2dValue = password2.value.trim();
   const button = document.querySelector('.button');
 
 
@@ -32,10 +27,10 @@ window.addEventListener("DOMContentLoaded", () => {
     email.addEventListener('input', () => {
       if (email.value === '') {
         email.parentElement.dataset.status = 'false';
-        setErrorFor(email, 'Please fill your Email adress');
+        setErrorFor(email, 'Please fill your Email address');
       } else if (!isEmail(email.value)) {
         email.parentElement.dataset.status = 'false';
-        setErrorFor(email, 'Please fill the valid Email adress');
+        setErrorFor(email, 'Please fill the valid Email address');
       }
       else {
         setSuccessFor(email);
@@ -64,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       } else if (password.value.length < 8) {
         password.parentElement.dataset.status = 'false';
-        setErrorFor(password, 'Please fill mor than 8 characters');
+        setErrorFor(password, 'Please fill more than 8 characters');
         password2.setAttribute('disabled', "true");
       }  else if (password.value.match(/\s/g)) {
         password.parentElement.dataset.status = 'false';
